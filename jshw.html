@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Empowerment of the Sheeple</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="jshw.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Up to date news on where and when our alien overlords were spotted.">
+    <meta name="ACBee8" content="UCBDataSF18HW14">
+    <script type="text/javascript" src="Data/data.js"></script>
+ 
+</head>
+
+<body>
+    <form>
+        <div id=input>
+            <label for="dateSearch">Search for Sightings by Date:</label>
+            <input type="date" id="dateSearch" onkeyup="searchByDate()"
+            name="q" min="2010-01-01"
+            pattern="[0-9]{1,2}[/][0-9]{1,2}[/][0-9]{4}">
+            <button>Search</button>
+            <span class="validity"></span>
+        </div>
+    </form>
+    <table id="sightings" style="width:80%">
+    
+    <!-- <input type="button" onclick="showSightingsToDate()" value="All Sightings To Date" /> -->
+    <!-- <div id="showData"></div> -->
+    
+    <div class = "container">
+        <table id="sightings" class = "table"></table>
+    </div>
+    
+</body>
+
+<script>
+    var sightings = document.getElementById("sightings");
+    //var table = document.createElement("Table of Evidence");
+    
+    var header = sightings.createTHead(0);
+    var headerrow = header.insertRow(0);
+    
+    Object.entries(dataSet[0]).forEach(([key, _, colIndex]) => {
+        var hcell = headerrow.insertCell(colIndex);
+        //cells
+        hcell.innerHTML = key;
+    });
+    
+    dataSet.forEach((ufo, rowIndex) => {
+             //row  
+        var row = sightings.insertRow(rowIndex+1);
+        Object.entries(ufo).forEach(([key, value, colIndex]) => {
+            //column
+            var cell = row.insertCell(colIndex);
+            //cells
+            cell.innerHTML = value;
+        });
+    });
+</script>
+
+<script>
+    function searchByDate() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("searchByDate");
+        filter = input.value();
+        table = document.getElementById("sightings");
+        tr = table.getElementsByTagName("tr");
+    
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            } else {
+            tr[i].style.display = "none";
+            }
+        } 
+        }
+        }
+    </script>
+
+<!-- iterate thru each object -->
+
+
+// var datetime = []
+// var city = []
+// var state = []
+// var country = []
+// var shape = []
+// var durationMinutes = []
+// var comments = []
+
+<body>
+    
+</body>
+    
+
+for (var i=0; i < students.length; i++) {
+    printName(students[i];
+}
+</body>
+</html>
+
+
+datetime": "1/1/2010",
+		"city": 
+		"state":
+		"country":
+		"shape": 
+		"durationMinutes": 
+		"comments"
